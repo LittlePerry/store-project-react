@@ -6,12 +6,19 @@ import {calcTotalPrice} from "../../utils/utils";
 import './cart-block.css';
 import {CartMenu} from "../cart-menu";
 import {ItemsInCart} from "../items-in-cart";
+import {useNavigate} from "react-router-dom";
 
 export const CartBlock = () => {
 
     const items = useSelector(state => state.cart.itemsInCart)
     const totalPrice = calcTotalPrice(items)
     const [isCartMenuVisible, setCartMenuVisible] = useState(false)
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        setCartMenuVisible(false)
+        navigate("/order")
+    }
 
     return (
         <div className="cart-block">
@@ -22,7 +29,7 @@ export const CartBlock = () => {
                 :
                 null
             }
-            {isCartMenuVisible ? <CartMenu items={items} onClick={() => null} /> : null}
+            {isCartMenuVisible ? <CartMenu items={items} onClick={handleClick} /> : null}
         </div>
     );
 };
