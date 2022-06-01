@@ -1,5 +1,5 @@
-#Online game shop
-####[DEMO APP](https://store-project-react.vercel.app/)
+# Online game shop
+#### [DEMO APP](https://store-project-react.vercel.app/)
 To start project, use `npm init`.<br> After installing all the dependencies, run
 locally using the `npm start` command.
 The app uses:
@@ -71,7 +71,7 @@ const GAMES = [
 ]
 ```
 
-##Folder structure
+## Folder structure
 The project has the following folder structure<br>
 
 - public
